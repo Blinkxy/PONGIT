@@ -1,0 +1,163 @@
+::-webkit-scrollbar {
+	width: 6px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+	/* background: #aa5656; */
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+	background: #888;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+	background: #555;
+  }
+
+  @keyframes active {
+	from  {top: 100%;}
+	to {top: calc(50% - 400px);}
+  }
+
+/* notifications-container Section */
+.notifications-container {
+    /* display: flex;
+    flex-direction: column;
+    gap: 15px; */
+
+
+	padding: 30px;
+	position: absolute;
+	width: 50%;
+	height: 800px;
+	left: calc(50% - 25%);
+	top: calc(50% - 400px); /* Position relative to the container */
+	background-color: #15023c;
+	border: 3px solid #4a19fe;
+	border-radius: 20px;
+	opacity: 0.7;
+	overflow: auto; /* Prevent the ball from moving outside */
+
+}
+
+.notifications-container.active{
+	-webkit-animation: active 1s normal forwards; 
+	-moz-animation:    active 1s normal forwards;
+	-o-animation:      active 1s normal forwards;
+	/* height: 70px; */
+}
+
+/* No Notifications Message */
+.no-notifications {
+    text-align: center;
+    color: #999;
+    font-size: 18px;
+    padding: 50px 0;
+    border: 1px dashed #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+}
+
+/* Individual Notification Styles */
+.notification {
+	margin: 10px auto; /* Center the container */
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+/* Individual Notification Styles */
+.notification {
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover Effect for Notifications */
+.notification:hover {
+    background-color: #f0f0ff;
+}
+
+/* Message Notification */
+.notification.message {
+    border-left: 5px solid #4caf50; /* Green */
+}
+
+/* Friend Request Notification */
+.notification.friend-request {
+    border-left: 5px solid #2196f3; /* Blue */
+}
+
+/* Game Invite Notification */
+.notification.game-invite {
+    border-left: 5px solid #ff9800; /* Orange */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Game Invite Actions (in-line buttons) */
+.notification.game-invite .actions {
+    display: flex;
+    gap: 10px;
+	margin-right: 10px;
+}
+
+/* Accept Button */
+button.accept {
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+button.accept:hover {
+    background-color: #45a049;
+}
+
+/* Decline Button */
+button.decline {
+    background-color: #f44336;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+button.decline:hover {
+    background-color: #e53935;
+}
+
+/* Notification Text */
+.notification p {
+    margin: 0;
+    color: #333;
+    font-size: 16px;
+    flex: 1; /* Allow the message to take up the remaining space */
+}
+
+/* Notification Time */
+.time {
+    font-size: 14px;
+    color: #777;
+}

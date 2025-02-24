@@ -1,0 +1,250 @@
+.tournament-container {
+    padding: 0;
+    position: absolute;
+    width: 30%;
+    height: 800px;
+    left: calc(50% - 15%);
+    top: calc(50% - 400px);
+    background: linear-gradient(to right, #04030e, #312fbd);
+    border-radius: 20px;
+}
+
+.tournament-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.tournament-container .holder {
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    padding: 10px;
+    background-image: url('../assets/imgs/Mask_group1.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.tournament-container .tournament-name,
+.tournament-container .invite-friends {
+    border: 3px solid;
+    border-radius: 10px;
+    width: 50%;
+    margin: 10px auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px 0;
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    text-align: center;
+}
+
+.tournament-container .tournament-name .name {
+	
+    /* border: 3px solid;
+    border-radius: 10px;
+    width: 50%;
+    margin: 10px auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: normal;
+    padding: 20px 0;
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    text-align: center; */
+}
+
+.tournament-container .invite-friends i {
+    margin-left: 8px;
+}
+
+.tournament-container .tournament-name {
+    background: linear-gradient(to right, #4cc2d7, #054fb0);
+}
+
+.tournament-container .tournament-name .name {
+	flex: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 24px;
+    color: #fff;
+}
+
+.tournament-container .tournament-name .total-joins,
+.tournament-container .tournament-name i {
+	flex: 15%;
+}
+.tournament-container .tournament-name i:hover {
+	cursor: pointer;
+	color: #fff;
+}
+
+.tournament-container .invite-friends {
+    background: linear-gradient(to right, #03ab62, #06ae6f);
+}
+
+.tournament-container .invite-friends:hover {
+    cursor: pointer;
+}
+
+/* Player List Container */
+.tournament-container .players {
+    list-style-type: none;
+    margin: 0 auto;
+    padding: 0;
+    width: 80%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Individual Player List Item */
+.tournament-container .players .player {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ddd;
+    margin: 10px 0;
+    background-color: #484d54;
+    border-radius: 8px;
+    width: 100%;
+    height: 100%;
+    padding: 20px 16px;
+    opacity: 0.7;
+}
+
+.tournament-container .players .player:last-child {
+    border-bottom: none;
+}
+
+/* Owner Highlight */
+.tournament-container .players .owner {
+    background-color: #f3f8ff;
+    font-weight: bold;
+}
+
+/* Player Name */
+.tournament-container .player-name {
+    font-size: 20px;
+    flex: 70%;
+}
+
+.tournament-container .player-name span {
+    font-size: 14px;
+    color: #888;
+    margin-left: 8px;
+}
+
+/* Start Button */
+.tournament-container .btn-start-container {
+    width: 500px;
+    margin: 30px auto;
+}
+
+.tournament-container .btn-start-container .btn-start {
+    width: 100%;
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #5cb85c;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.tournament-container .btn-start:hover {
+    background-color: #4cae4c;
+    cursor: pointer;
+}
+
+/* Delete Button */
+.tournament-container .btn-delete-container {
+    width: 500px;
+    margin: 20px auto;
+}
+
+.tournament-container .btn-delete-container .btn-delete {
+    width: 100%;
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #d9534f;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.tournament-container .btn-delete:hover {
+    background-color: #c9302c;
+    cursor: pointer;
+}
+
+/* Kick Button */
+.tournament-container .btn-kick-container {
+    width: 500px;
+    margin: 20px auto;
+}
+
+.tournament-container .btn-kick-container .btn-kick {
+    width: 100%;
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #f0ad4e;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.tournament-container .btn-kick:hover {
+    background-color: #ec971f;
+    cursor: pointer;
+}
+
+/* Kick User Input */
+.tournament-container .kick-user-input {
+    width: 80%;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.tournament-container .kick-user-input input.kick-input {
+    flex: 1;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.tournament-container .kick-user-input button {
+    padding: 8px 16px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.tournament-container .kick-user-input .btn-go {
+    background-color: #5cb85c;
+    color: white;
+}
+
+.tournament-container .kick-user-input .btn-cancel {
+    background-color: #d9534f;
+    color: white;
+}

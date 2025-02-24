@@ -1,0 +1,275 @@
+.game-container, .game-mode, .tournament {
+	padding: 0;
+	position: absolute;
+	width: 50%;
+	height: 800px;
+	left: calc(50% - 25%);
+	top: calc(50% - 400px); /* Position relative to the container */
+	background-color: #15023c;
+	border: 3px solid #4a19fe;
+	border-radius: 20px;
+	overflow: hidden; /* Prevent the ball from moving outside */
+	opacity: 0.8;
+}
+
+
+.game-container.active{
+	-webkit-animation: active 1s normal forwards; 
+	-moz-animation:    active 1s normal forwards;
+	-o-animation:      active 1s normal forwards;
+	/* height: 70px; */
+}
+
+/* .chat-container.leave{
+	-webkit-animation: leave 0.5s normal forwards;
+	-moz-animation:    leave 0.5s normal forwards;
+	-o-animation:      leave 0.5s normal forwards;
+} */
+
+
+/* The animation code */
+@keyframes active {
+	from  {top: 100%;}
+	to {top: calc(50% - 400px);}
+  }
+
+
+  .game-container img {
+	/* position: absolute;
+	top: -70px; */
+	/* width: 100%;
+	height: 100%; */
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	/* opacity: .7; */
+  }
+
+  .tournament img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	/* z-index: -1; */
+  }
+
+  
+  .game-mode {
+	  width: 20%;
+	  height: 250px;
+	  left: calc(50% - 10%);
+	  top: calc(50% - 125px);
+	  opacity: 1;
+	  border-radius: 0;
+	  display: none;
+	  text-align: center;
+	}
+	
+	.game-mode .txt {
+		color :#fff;
+		margin: 0 auto;
+		/* background-color: #ff0000; */
+		margin-bottom: 10px;
+		/* word-spacing: 30px; */
+		/* letter-spacing: 1px; */
+		padding: 10px 0;
+		text-align: center;
+		width: 300px;
+		font-family: Arial, Helvetica, sans-serif;
+	}
+	
+	.game-mode img {
+		width: 30px;
+		height: 30px;
+		float: right;
+		/* margin-right: 5px; */
+	}
+	
+	.game-mode img:hover {
+		cursor: pointer;
+		background-color: #ff0000;
+		/* margin-right: 5px; */
+	}
+	
+	.game-container .buttons {
+		position: absolute;
+		width: 250px;	
+		height: 120px;
+		left: calc(50% - 125px);
+		top: calc(50% - 60px);
+		/* background-color: #fff; */
+	}
+	
+	.tournament {
+		display: none;
+	}
+
+	.tournament i {
+		position: absolute; /* Position it relative to the parent container */
+		top: 20px; /* 20px from the top */
+		left: 20px; /* 20px from the left */
+		background-color: #4a19fe; /* Solid blue background */
+		color: #ffffff; /* White arrow color */
+		font-size: 40px; /* Icon size */
+		border-radius: 50%; /* Make it circular */
+		padding: 10px; /* Space inside the circle */
+		box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+		transition: all 0.3s ease; /* Smooth transitions for hover effects */
+		z-index: 10; /* Ensure it appears above other elements */
+	}
+	
+	.tournament i:hover {
+		cursor: pointer; /* Pointer cursor on hover */
+		background-color: #ff6347; /* Change background to red */
+		color: #fffa65; /* Change arrow color to yellow */
+		transform: scale(1.1); /* Slightly enlarge the icon */
+		box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.4); /* Enhance shadow on hover */
+	}
+
+	.tournament .buttons {
+		position: absolute;
+		width: 250px;	
+		left: calc(50% - 125px);
+		top: calc(50% - 60px);
+		z-index: 10000;
+	}
+
+	.game-mode .buttons {
+		width: 250px;
+		/* height: 120px; */
+		margin: 0 auto;
+	}
+	
+	.game-container .buttons a, 
+	.game-mode .buttons a, 
+	.tournament .buttons a {
+		display: block;
+		border: 5px solid;
+		padding: 10px 20px;
+		margin: 10px 0;
+		border-radius: 30px;
+		width: 100%;
+		text-transform: uppercase;
+		background: linear-gradient(to top, #9255bf, #2542a1);
+		text-align: center;
+		color: white;
+		font-weight: bold;
+		transition: all 0.4s ease; /* Smooth transition for all properties */
+	}
+
+	.tournament .buttons a.second {
+		display: none;
+	}
+	
+	.game-container .buttons a:hover
+	 , .game-mode .buttons a:hover, 
+	 .tournament .buttons a:hover {
+		cursor: pointer;
+		background: linear-gradient(to top, #2542a1, #9255bf); /* Change background gradient */
+		border-color: #ff6347; /* Change border color */
+		color: #fffa65; /* Change text color */
+		transform: scale(1.05); /* Slightly enlarge the button */
+		box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3); /* Add a shadow effect */
+	}
+
+	.ball {
+		position: absolute;
+		width: 30px;
+		height: 30px;
+		background-color: #ff0000;
+		border-radius: 50%;
+		top: 50%; /* Center the ball initially */
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+	#tournament-form {
+
+		position: absolute;
+		width: 400px;	
+		height: 120px;
+		z-index: 9999;
+		left: calc(50% - 200px);
+		top: calc(50%);
+		margin-top: 20px;
+		text-align: center;
+	}
+	
+	#tournament-form label {
+		display: block;
+		margin-bottom: 10px;
+		font-size: 16px;
+		color: white;
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+	
+	#tournament-form input[type="text"] {
+		width: 80%;
+		padding: 10px;
+		border: 2px solid #4a19fe;
+		border-radius: 10px;
+		background-color: #15023c;
+		color: white;
+		font-size: 14px;
+		outline: none;
+		text-align: center;
+		transition: all 0.4s ease;
+	}
+	
+	#tournament-form input[type="text"]:focus {
+		border-color: #ff6347;
+		box-shadow: 0px 0px 10px rgba(255, 99, 71, 0.7);
+	}
+	
+	#tournament-form input[type="text"]::placeholder {
+		color: #a3a3a3;
+		font-style: italic;
+	}
+	
+
+	#tournament-form .form-buttons {
+		margin-top: 20px;
+		text-align: center;
+	}
+	
+	#tournament-form .form-btn {
+		display: inline-block;
+		border: 5px solid;
+		padding: 10px 20px;
+		margin: 10px 5px;
+		border-radius: 30px;
+		width: 40%;
+		text-transform: uppercase;
+		background: linear-gradient(to top, #9255bf, #2542a1);
+		text-align: center;
+		color: white;
+		font-weight: bold;
+		transition: all 0.4s ease;
+		cursor: pointer;
+	}
+	
+	#tournament-form .form-btn:hover {
+		background: linear-gradient(to top, #2542a1, #9255bf);
+		border-color: #ff6347;
+		color: #fffa65;
+		transform: scale(1.05);
+		box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+	}
+	
+	/* Unique styles for Create and Cancel buttons */
+	#tournament-form .form-btn.create {
+		border-color: #4caf50; /* Green border */
+	}
+	
+	#tournament-form .form-btn.create:hover {
+		background: linear-gradient(to top, #3c8d3f, #2d6e30);
+	}
+	
+	#tournament-form .form-btn.cancel {
+		border-color: #f44336; /* Red border */
+	}
+	
+	#tournament-form .form-btn.cancel:hover {
+		background: linear-gradient(to top, #b52a24, #8b1e1a);
+	}
+	

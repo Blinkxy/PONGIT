@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .button {
+            background-color: #007bff;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 4px;
+            display: inline-block;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <h2>Password Reset Request</h2>
+        <p>Hello,</p>
+        <p>We received a request to reset your password. Click the button below to create a new password:</p>
+        
+        <a href="{{reset_url}}" class="button">Reset Password</a>
+        
+        <p>Or copy and paste this link in your browser:</p>
+        <p>{{reset_url}}</p>
+        
+        <p>This link will expire in 24 hours.</p>
+        
+        <p>If you didn't request this password reset, please ignore this email.</p>
+        
+        <p>Best regards,<br>Your Team</p>
+    </div>
+</body>
+</html>

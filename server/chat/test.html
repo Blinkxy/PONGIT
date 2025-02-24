@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebSocket Test</title>
+</head>
+<body>
+    <h1>WebSocket Test</h1>
+    <label for="room_name">Room Name: </label>
+    <input type="text" id="room_name" placeholder="Enter room name">
+    <br><br>
+    <button id="sendMessageButton">Send WebSocket Message</button>
+
+    <p id="status"></p>
+
+    <script>
+        let socket = null;
+
+        document.getElementById("sendMessageButton").addEventListener("click", function() {
+            const roomName = document.getElementById("room_name").value;
+            if (!roomName) {
+                alert("Please enter a room name!");
+                return;
+            }
+
+            const wsUrl = `ws://10.11.4.4:8000/ws/chat/${roomName}/`;
+
+            if (!socket || socket.readyState !== WebSocket.OPEN) {
+                // Initialize WebSocket connection
+                socket = new WebSocket(wsUrl);
+
+                socket.onopen = function() {
+                    document.getElementById("status").textContent = "WebSocket connection established.";
+                    console.log("WebSocket is open now.");
+                };
+
+                socket.onmessage = function(event) {
+                    document.getElementById("status").textContent = `Message received: ${event.data}`;
+                    console.log("Message received from server:", event.data);
+                };
+
+                socket.onerror = function(error) {
+                    document.getElementById("status").textContent = "WebSocket error occurred.";
+                    console.error("WebSocket error:", error);
+                };
+
+                socket.onclose = function() {
+                    document.getElementById("status").textContent = "WebSocket connection closed.";
+                    console.log("WebSocket is closed now.");
+                };
+            }
+
+            // Send a message
+            const message = JSON.stringify({ message: "Hello from client!" });
+            socket.onopen = function() {
+                socket.send(message);
+                console.log("Message sent:", message);
+                document.getElementById("status").textContent = "Message sent.";
+            };
+        });
+    </script>
+</body>
+</html>

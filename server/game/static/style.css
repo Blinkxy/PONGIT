@@ -1,0 +1,28 @@
+body{
+    width: 100wh;
+    height: 100vh;
+    background-color: black;
+    overflow: hidden;
+ } 
+
+button {
+    width: 200px;
+    height: 40px;
+    border:none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    cursor: pointer;
+    border: 2px solid orange;
+    border-radius: 10%;
+}
+
+button:hover {
+    background-color: black;
+    color: white;
+}
+
+
+
+

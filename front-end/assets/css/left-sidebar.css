@@ -1,0 +1,494 @@
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  /* background: #aa5656; */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.sidebar-container{
+	width: 400px;
+	height: 700px;
+	background-color: #2a1a4d;
+	/* opacity: .9; */
+	position: absolute;
+	top: calc(50% - 350px);
+	left: -3px;
+	overflow: auto;
+	/* outline: 3px solid #1984; */
+	border: 3px solid #1984; /* Changed outline to border */
+	 /* Initially hidden */
+	 transform: translateX(-100%);
+	 opacity: 0;
+	transition: transform 0.8s ease, opacity 0.8s ease; /* Smooth transition */
+	/* Border animation added */
+	/* animation: borderGlow 3s infinite;  */
+	/* padding: 10px 20px; */
+}
+
+/* .sidebar-container.borderAnimation{
+	-webkit-animation: borderGlow 1s normal infinite; 
+	-moz-animation:    borderGlow 1s normal infinite;
+	-o-animation:      borderGlow 1s normal infinite;
+} */
+
+.sidebar-container.borderAnimation {
+	-webkit-animation: borderGlow 1s normal; /* Runs for the specified duration */
+	-moz-animation:    borderGlow 1s normal;
+	-o-animation:      borderGlow 1s normal;
+	animation:         borderGlow 1s normal;
+	animation-iteration-count: 5; /* Runs the animation 3 times */
+	animation-fill-mode: forwards; /* Keeps the final state of the animation */
+}
+
+@keyframes borderGlow {
+	0% {
+		border-color: #1984;
+	}
+	25% {
+		border-color: #1fa9ff;
+	}
+	50% {
+		border-color: #26d4ff;
+	}
+	75% {
+		border-color: #1fa9ff;
+	}
+	100% {
+		border-color: #1984;
+	}
+}
+
+
+.third.iconAnimation i {
+    color: black; /* Default color */
+    animation: colorPulse 2s ease-in-out 5; /* Animation for 5 iterations */
+    animation-fill-mode: forwards; /* Retains the final state after animation */
+}
+
+@keyframes colorPulse {
+    0% {
+        color: black; /* Start with the default color */
+    }
+    25% {
+        color: red; /* Change to red */
+    }
+    50% {
+        color: orange; /* Change to orange */
+    }
+    75% {
+        color: yellow; /* Change to yellow */
+    }
+    100% {
+        color: black; /* Return to the default color */
+    }
+}
+
+
+.sidebar-container .sidebar{
+	width: 100%;
+	height: 100%;
+}
+
+/* .sidebar-container.hover{
+	-webkit-animation: hover 0.5s normal forwards; 
+	-moz-animation:    hover 0.5s normal forwards;
+	-o-animation:      hover 0.5s normal forwards;
+}
+
+.sidebar-container.leave{
+	-webkit-animation: leave 0.5s normal forwards; 
+	-moz-animation:    leave 0.5s normal forwards;
+	-o-animation:      leave 0.5s normal forwards;
+} */
+
+.sidebar-container.hover {
+	transform: translateX(0); /* Fully visible */
+	opacity: 1;
+  }
+  
+  .sidebar-container.leave {
+	transform: translateX(-100%); /* Slide out of view */
+	opacity: 0;
+  }
+
+
+/* The animation code */
+/* @keyframes hover {
+	from  {left: -330px;}
+	to {left: 0;}
+  }
+
+  @keyframes leave {
+	from  {left: 0;}
+	to {left: -330px;}
+  } */
+
+  .sidebar .header {
+	width: 100%;
+	height: 15%;
+	background: linear-gradient(to right, #ae528e, #ae8660);
+	
+  }
+  .sidebar .header .txt {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center; 
+	justify-content: center;
+	color: #fff;
+  }
+
+  .sidebar .header .txt span{
+	display: inline-block;
+	/* background-color: #fff; */
+	/* height: 100%; */
+	/* font-weight: bold; */
+	font-size: 30px;
+	
+	margin-left: 10px;
+  }
+
+  .sidebar .header .txt i{
+	font-size: 30px;
+	margin-right: 10px;
+  }
+
+  .sidebar .nav .links
+  {
+	display: flex;
+	justify-content: space-around;
+	margin: 0;
+	padding: 10px 0;
+	/* background-color: aliceblue; */
+	list-style-type: none;
+	font-size: 20px;
+  }
+
+.sidebar .nav .links li {
+	/* padding-left: 10px; */
+	display: inline-block;
+	/* text-align: left; */
+	/* padding-right: 10px; */
+	padding: 10px 20px;
+}
+
+.sidebar .nav .links li a {
+	  color: #9a92ab;
+	  border: none;
+	  display: inline-block;
+  }
+
+  .sidebar .nav .links li.active {
+	padding-bottom: 10px;
+	/* color: rgb(206, 130, 230); */
+	text-decoration: none;
+	transition: all .25s ease;
+	cursor: pointer;
+	border-bottom: solid 8px #c1bdc9;
+  }
+
+  .sidebar .nav .links li.active a{
+	/* padding-bottom: 10px; */
+	color: rgb(206, 130, 230);
+	/* text-decoration: none; */
+	/* border-bottom: solid 5px #ce82e6; */
+	/* transition: all .25s ease; */
+	cursor: pointer;
+  }
+  
+  .sidebar .nav .links li.inactive a {
+	padding-bottom: 0;
+	color: rgba(225, 224, 224, 0.3);
+	text-decoration: none;
+	border-bottom: none;
+	cursor: pointer;
+  }
+  
+.sidebar .friends, .sidebar .channels{
+	padding: 30px 0;
+	/* background-color: brown; */
+	text-align: center;
+}
+
+.sidebar .friends .nav, 
+.sidebar .channels .nav {
+	list-style-type: none;
+}
+
+.sidebar .friends .nav > li, 
+.sidebar .channels .nav > li {
+	margin: 20px 10px;
+	border-radius: 10px;
+	background-color: #c9c1d6;
+	color: #32076c;
+	padding: 5px 0;
+	/* display: flex;
+	align-items: center;
+	justify-content: center; */
+}
+
+.sidebar .friends .nav > li.add-friend {
+	margin: 0 40px;
+	border-radius: 5px;
+	background-color: #04975b;
+}
+
+.sidebar .friends .nav > li > a,
+.sidebar .channels .nav > li > a{
+	text-decoration: none;
+	display: inline-block;
+	/* padding: 20px 0; */
+	width: 100%;
+	height: 100%;
+	/* background-color: #fff; */
+	border-radius: 10px;
+	padding: 10px 20px;
+	
+}
+
+.sidebar .friends .nav > li.add-friend a,
+.sidebar .channels .nav > li.add-channel a {
+	border-radius: 5px;
+	/* background-color: #04975b; */
+	text-align: center;
+}
+
+.sidebar .friends .nav > li a:hover,
+.sidebar .channels .nav > li a:hover{
+	cursor: pointer;
+}
+
+.sidebar .friends .nav > li a span,
+.sidebar .channels .nav > li a span {
+	display: inline-block;
+	padding: 10px 0;
+	padding: 0;
+	font-size: 20px;
+	font-weight:900;
+	/* margin: 0 30px; */
+}
+
+.sidebar .friends .nav > li a i,
+.sidebar .channels .nav > li a i
+{
+	font-weight: 700;
+	font-size: 20px;
+	/* margin: 0 30px; */
+}
+
+.sidebar .friends .nav > li a i.i-left,
+.sidebar .channels .nav > li a i.i-left
+{
+	float: left;
+	margin-left: 20px;
+}
+
+.sidebar .friends .nav > li a i.i-right,
+.sidebar .channels .nav > li a i.i-right
+{
+	float: right;
+	margin-right: 20px;
+}
+
+.sidebar .friends .nav > li.add-friend a span,
+.sidebar .channels .nav > li.add-channel a span {
+	margin: 0 10px;
+}
+
+/* .drop-down {
+	display: none;
+} */
+
+.sidebar .drop-down {
+	display: none;
+}
+
+
+.sidebar .drop-down .select-box{	
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #983a3a;
+	margin: 10px 5px;
+	border-radius: 10px;
+	background-color: #776f6f;
+}
+
+.sidebar .drop-down .profile {
+    flex: 80%;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    overflow: hidden;
+	border-radius: 10px;
+}
+
+
+.sidebar .drop-down .profile a {
+    display: flex;
+    align-items: center; /* Align items vertically */
+    justify-content: flex-start;
+    text-decoration: none;
+    width: 100%; /* Fill the available width */
+    overflow: hidden;
+}
+
+/* Status indicator (button) */
+.sidebar .drop-down .profile .status-indicator {
+    width: 15px; /* Size of the status button */
+    height: 15px;
+    border-radius: 50%; /* Make it circular */
+    margin-right: 10px; /* Space between the status and image */
+    background-color: #4CAF50; /* Default: Active (green) */
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.5); /* Add glowing effect */
+    border: 2px solid #fff; /* White border for clarity */
+}
+
+/* Status indicator for inactive users */
+.sidebar .drop-down .profile .status-indicator.inactive {
+    background-color: #f44336; /* Inactive (red) */
+    box-shadow: 0 0 8px rgba(244, 67, 54, 0.5);
+}
+
+/* Status indicator for idle users */
+.sidebar .drop-down .profile .status-indicator.idle {
+    background-color: #ff9800; /* Idle (orange) */
+    box-shadow: 0 0 8px rgba(255, 152, 0, 0.5);
+}
+
+.sidebar .drop-down .profile:hover{
+	cursor: pointer;
+	background-color: #04975b;
+}
+
+
+/* .sidebar .drop-down .profile a img {
+	border-radius: 50%;
+	width: 20%;
+	height: 100%;
+} */
+
+/* Profile image */
+.sidebar .drop-down .profile a img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+
+/* Nickname text */
+.sidebar .drop-down .profile a span {
+    font-weight: 600;
+    font-size: 18px;
+    color: #ffffff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-left: 8px;
+    font-family: 'Roboto', Arial, sans-serif;
+    letter-spacing: 0.5px;
+}
+
+.sidebar .drop-down .actions {
+	flex: 25%;
+	/* background-color: #6c2121; */
+	display: flex;
+	align-items:center;
+	justify-content: center;
+}
+
+.sidebar .drop-down .actions a {
+	display: inline-block;
+	text-decoration: none;
+	margin: 0 5px;
+	padding: 10px;
+	font-size: 20px;
+}
+
+.sidebar .drop-down .actions a i {
+	cursor: pointer;
+}
+
+
+.sidebar .drop-down .select-box {	
+	display: flex;
+	justify-content: space-between; /* Space between profile and actions */
+	align-items: center;
+	background-color: #776f6f;
+	margin: 10px 5px;
+	border-radius: 10px;
+	/* padding: 10px; */
+	box-sizing: border-box; /* Ensure padding doesn't break the layout */
+	/* Make all select boxes the same width */
+	/* width: 100%; */
+}
+
+.sidebar .drop-down .profile {
+	flex: 80%; /* Allow the profile section to take up remaining space */
+	display: flex;
+	align-items: center; /* Center align the content vertically */
+	padding: 10px; /* Add some padding */
+	overflow: hidden; /* Prevent overflowing content */
+}
+
+.sidebar .drop-down .profile:hover{
+	cursor: pointer;
+	background-color: #04975b;
+}
+
+.sidebar .drop-down .profile a {
+	display: flex;
+	align-items: center; /* Align image and text vertically */
+	justify-content: flex-start; /* Align content to the left */
+	text-decoration: none; /* Remove underline from links */
+	width: 100%; /* Fill the available width */
+	overflow: hidden; /* Prevent overflowing content */
+}
+
+.sidebar .drop-down .profile a img {
+	border-radius: 50%;
+	width: 40px; /* Fixed size for uniformity */
+	height: 40px;
+	margin-right: 10px; /* Add space between image and text */
+	flex-shrink: 0; /* Prevent the image from shrinking */
+}
+
+.sidebar .drop-down .profile a span {
+    font-weight: 600;
+    font-size: 18px;
+    color: #ffffff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-left: 8px;
+    font-family: 'Roboto', Arial, sans-serif;
+    letter-spacing: 0.5px;
+}
+
+.sidebar .drop-down .actions {
+	display: flex;
+	/* gap: 5px; */
+  }
+  
+  .sidebar .drop-down .actions a {
+	font-size: 1.2rem;
+	transition: color 0.3s ease;
+  }
+  
+  .sidebar .drop-down .actions a:hover {
+	color: #7d5fff;
+  }

@@ -1,0 +1,121 @@
+ /* Style the navbarigation bar */
+ .navbar {
+	width: 100%;
+	/* background-color: #3e2a2a; */
+	/* padding: 20px 10px; */
+	margin: 0;
+	padding: 0 20px;	
+  }
+
+  .navbar .logo {
+	/* background-color: #fff; */
+	padding: 0;
+	margin: 0;
+	width: 50%;
+	float: left;
+
+	/* flex: 50%; */
+  }
+
+  .navbar .logo a {
+	display: inline-block;
+	width: 10%;
+	margin: 0;
+	padding: 0;
+  }
+  
+  .navbar .logo a img {
+	/* background-color: aqua; */
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 100%;
+	height: 100%;
+  }
+
+  .navbar .links-container{
+	/* margin-right: 30px; */
+	/* flex: 50%;		 */
+	
+	margin: 0;
+	padding: 0;
+	width: 40%;
+	float: right;
+
+  }
+  .navbar .links-container .links{
+	list-style-type: none;
+	width: 100%;
+	margin: 0;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	border-radius: 15px;
+	background-color: #ffffff;
+	opacity: .4;
+	text-align: center;
+  }
+
+  .navbar .links-container .links li {
+	/* margin-left: 25%; */
+	
+	/* float: left; */
+	width: 100%;
+	/* height: 80%; */
+	border-right: 3px solid #000;
+	/* margin: 10px 0; */
+	/* text-align: center; */
+	/* background-color:aqua; */
+}
+
+.navbar .links-container .links li:last-child {
+	border-right: 0;
+}
+  
+  /* navbar links */
+  .navbar .links-container .links li a {
+	/* float: left; */
+	/* text-align: center; */
+	/* color: rgb(0, 0, 0); */
+	text-decoration: none;
+	font-size: 10px;
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	/* background-color: rgb(186, 45, 108); */
+	padding: 12px;	
+}
+
+.navbar .links-container .links li a img {
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 40px;
+	height: 40px;
+	/* background-color: #911313; */
+}
+
+.navbar .links-container .links li.profile a img {
+	border-radius: 50%;
+	/* width: 60px;
+	height: 60px; */
+}
+
+/* navbar links on mouse-over */
+.navbar .links-container .links li a:hover {
+	background-color: #000;
+	cursor: pointer;
+  }
+
+  /* Current/active navbar link */
+  .navbar .links-container .links li a.active {
+	background-color: #04AA6D;
+  }
+
+
+  /* Add responsiveness - will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */
+  @media screen and (max-width: 500px) {
+	.navbar a {
+	  float: none;
+	  display: block;
+	}
+  }

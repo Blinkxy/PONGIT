@@ -1,0 +1,150 @@
+<div class="profile-container ">
+	<div class="header">
+		<div class="profile-img">
+			<img id="profile_image">
+		</div>
+		<div class="data">
+			<div class="subdata" class="nickname">
+				<div class="name first" id="username">Ghost</div>
+				<div class="joined second joindate" id="date-joined">joined: 10/15/199</div>
+			</div>
+			<div class="subdata" class="rank">
+				<div class="first" id="rank-set"># --</div>
+				<div class="second">Current Rank</div>
+			</div>
+			<div class="subdata" class="matches">
+				<div class="first" id="total-set">1</div>
+				<div class="second">Matches Played</div>
+			</div>
+			<div class="subdata" class="achievement">
+				<div class="first" id="achivement-set">--</div>
+				<div class="second">Achievements</div>
+			</div>
+		</div>
+	</div>
+	<div class="body">
+
+		<!-- match history -->
+		<div class="match-history one">
+			<div class="text">
+				<span class="txt">Last Matches</span>
+				<a class="view">View All</a>
+			</div>
+			<ul class="results">
+				<!-- <div class="match lose">
+					<div class="score1">5</div>
+					<div class="score2">10</div>
+				</div>
+				<div class="match win">
+					<div class="score1">14</div>
+					<div class="score2">7</div>
+				</div> -->
+				<li class="match lose">
+					<span class="date">22 oct 2024 7:18</span>
+					<span class="result">
+						<span class="profile1 profile"><img src="../assets/imgs/sidebar/ghost.jpeg"></span>
+						<span class="score">7 : 0</span>
+						<span class="profile2 profile"><img src="../assets/imgs/sidebar/ghost.jpeg"></span>
+					</span>
+					<span class="status">Lose</span>
+				</li>
+				<li class="match win">
+					<span class="date">22 oct 2024 7:18</span>
+					<span class="result">
+						<span class="profile1 profile"><img src="../assets/imgs/sidebar/ghost.jpeg"></span>
+						<span class="score">7 : 0</span>
+						<span class="profile2 profile"><img src="../assets/imgs/sidebar/ghost.jpeg"></span>
+					</span>
+					<span class="status">Win</span>
+				</li>
+			</ul>
+		</div>
+
+		<!--  -->
+		<div class="info-container">
+<!-- 
+			<div class="winning-rate">
+				<div class="text">Winning rate</div>
+				<div class="circle-container">
+					<div class="circle percentage-68">
+					 <div class="test">
+						 <span class="wins">20 Wins</span><br>
+						 <span class="percent">(68%)</span>
+					 </div>
+					  <div class="percentage-bar"></div>
+					</div>
+				</div>
+			</div> -->
+
+
+			<div class="winning-rate">
+				<div class="text">Winning rate</div>
+				<div class="progress-container">
+					<svg class="progress-circle">
+						<circle class="progress-background" cx="125" cy="125" r="100"></circle>
+						<circle class="progress-bar" cx="125" cy="125" r="100"></circle>
+					</svg>
+					<div class="progress-text">
+						<div class="wins" id="total-rate">-- MT</div>
+						<div class="percentage" id="win-rate">(--%)</div>
+					</div>
+				</div>
+				
+
+			</div>
+
+			
+			
+			<div class="ranking">
+				<div class="match-history first">
+					<div class="text">
+						<span class="txt">Losses / Wins</span>
+					</div>
+					<div class="results">
+						<div class="match lose">
+							<div class="score1" id="total-losses">5</div>
+							<!-- <div class="score2">10</div> -->
+						</div>
+						<div class="match win">
+							<div class="score1" id="total-wins">14</div>
+							<!-- <div class="score2">7</div> -->
+						</div>
+					</div>
+				</div>
+
+				<div class="match-history second">
+					<div class="text">
+						<span class="txt">Latest Win</span>
+					</div>
+					<div class="results result-last-win">
+		
+
+						<!-- <li class="match lose">
+							<span class="date">22 oct 2024 7:18</span>
+							<span class="result">
+								<span class="profile1 profile"><img src="../assets/imgs/sidebar/ghost.jpeg"></span>
+								<span class="score">7 : 0</span>
+								<span class="profile2 profile"><img src="../assets/imgs/sidebar/ghost.jpeg"></span>
+							</span>
+							<span class="status">Lose</span>
+						</li> -->
+
+					</div>
+				</div>
+
+				<!-- leader board -->
+				<div class="match-history leader-board">
+					<div class="text">
+						<span class="txt">Leader Board</span>
+						<a class="view">View All</a>
+					</div>
+					<ul class="classement">
+						<p>Empty leader board</p>
+					</ul>
+				</div>
+
+			</div>
+		</div>
+	
+	</div>
+</div>

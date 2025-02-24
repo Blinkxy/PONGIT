@@ -1,0 +1,83 @@
+html, body * { 
+	box-sizing: border-box; 
+	font-family: 'Open Sans', sans-serif; 
+	margin: 0;
+	padding: 0;
+}
+
+#myVideo {
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	min-width: 100%;
+	min-height: 100%;
+}
+
+.container{
+	/* position: relative; */
+	/* min-width: 100vh;
+	min-height: 100vh; */
+	/* background-color: #fff; */
+}	
+
+/* .container {
+	position: fixed;
+	right: 0;
+	bottom: 0;
+		min-width: 100%;
+		min-height: 100%;
+	
+	background-image: url('../imgs/bg.png');
+	
+} */
+
+.container {
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	min-width: 100%;
+	min-height: 100%;
+	/* background-image: url('../imgs/bg.png'); */
+	overflow: hidden; /* Ensure nothing overflows the container */ 
+
+}
+
+.container .left, .container .right {
+	width: 12px;
+	height: 150px;
+	position: absolute;
+	top: calc(50% - 75px);
+	border-radius: 5px;
+}
+
+.container .left {
+	margin-left: 50px;
+	background-color: #ffa6d6;
+	box-shadow: -1px 1px 10px 1px #ffa6d6;
+}
+.container .right {
+	position: absolute;
+	right: 0;
+	margin-right: 50px;
+	background-color: #ffb7b7;
+	box-shadow: -1px 1px 10px 1px #ffb7b7;
+}
+
+.container .right:hover, .container .left:hover{
+	cursor: pointer;
+}
+
+#player {
+	color: #fff;
+}
+
+#canvas {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1;
+}
+
+
+
+

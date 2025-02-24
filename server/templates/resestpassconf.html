@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .reset-container {
+            max-width: 400px;
+            margin: 40px auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            font-family: Arial, sans-serif;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-control {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .btn-reset {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            width: 100%;
+            cursor: pointer;
+        }
+        .error-message {
+            color: #dc3545;
+            font-size: 14px;
+            margin-top: 5px;
+            display: none;
+        }
+        .password-requirements {
+            font-size: 14px;
+            color: #6c757d;
+            margin-top: 10px;
+        }
+        .requirement {
+            margin: 5px 0;
+        }
+        .requirement.valid {
+            color: #28a745;
+        }
+    </style>
+</head>
+<body>
+    <div class="reset-container">
+        <h2>Reset Your Password</h2>
+        <form id="resetPasswordForm">
+            <div class="form-group">
+                <label for="newPassword">New Password</label>
+                <input type="password" class="form-control" id="newPassword" required>
+                <div id="passwordError" class="error-message"></div>
+            </div>
+            
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" class="form-control" id="confirmPassword" required>
+                <div id="confirmError" class="error-message"></div>
+            </div>
+
+            <div class="password-requirements">
+                <div class="requirement" id="lengthReq">At least 8 characters long</div>
+                <div class="requirement" id="upperReq">Contains uppercase letter</div>
+                <div class="requirement" id="lowerReq">Contains lowercase letter</div>
+                <div class="requirement" id="numberReq">Contains number</div>
+                <div class="requirement" id="specialReq">Contains special character</div>
+            </div>
+
+            <button type="submit" class="btn-reset">Reset Password</button>
+        </form>
+    </div>
+
+    <script>
+        const form = document.getElementById('resetPasswordForm');
+        const newPassword = document.getElementById('newPassword');
+        const confirmPassword = document.getElementById('confirmPassword');
+        
+        // Get token from URL
+        const token = window.location.pathname.split('/').pop();
+
+        // Password validation requirements
+        const requirements = {
+            length: {
+                regex: /.{8,}/,
+                element: document.getElementById('lengthReq')
+            },
+            upper: {
+                regex: /[A-Z]/,
+                element: document.getElementById('upperReq')
+            },
+            lower: {
+                regex: /[a-z]/,
+                element: document.getElementById('lowerReq')
+            },
+            number: {
+                regex: /[0-9]/,
+                element: document.getElementById('numberReq')
+            },
+            special: {
+                regex: /[!@#$%^&*(),.?":{}|<>]/,
+                element: document.getElementById('specialReq')
+            }
+        };
+
+        // Real-time password validation
+        newPassword.addEventListener('input', function() {
+            const password = this.value;
+            
+            for (let req in requirements) {
+                const isValid = requirements[req].regex.test(password);
+                requirements[req].element.classList.toggle('valid', isValid);
+            }
+        });
+
+        form.addEventListener('submit', async function(event) {
+            event.preventDefault();
+            
+            const password = newPassword.value;
+            const confirm = confirmPassword.value;
+            
+            // Reset error messages
+            document.getElementById('passwordError').style.display = 'none';
+            document.getElementById('confirmError').style.display = 'none';
+
+            // Validate password requirements
+            let isValid = true;
+            for (let req in requirements) {
+                if (!requirements[req].regex.test(password)) {
+                    document.getElementById('passwordError').textContent = 'Password does not meet all requirements';
+                    document.getElementById('passwordError').style.display = 'block';
+                    isValid = false;
+                    break;
+                }
+            }
+
+            // Validate password match
+            if (password !== confirm) {
+                document.getElementById('confirmError').textContent = 'Passwords do not match';
+                document.getElementById('confirmError').style.display = 'block';
+                isValid = false;
+            }
+
+            if (!isValid) return;
+
+            try {
+                const response = await fetch('/api/reset-password/', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRFToken': getCookie('csrftoken')
+                    },
+                    body: JSON.stringify({
+                        token: token,
+                        new_password: password
+                    })
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    alert('Password has been successfully reset. You can now login with your new password.');
+                    window.location.href = '/login';  // Redirect to login page
+                } else {
+                    alert(data.error || 'An error occurred while resetting your password.');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Network error occurred. Please try again later.');
+            }
+        });
+
+        // Helper function to get CSRF token
+        function getCookie(name) {
+            let cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                const cookies = document.cookie.split(';');
+                for (let i = 0; i < cookies.length; i++) {
+                    const cookie = cookies[i].trim();
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+    </script>
+</body>
+</html>

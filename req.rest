@@ -1,0 +1,23 @@
+
+
+POST http://10.11.4.4:8080/login/
+Content-Type: application/json
+
+{"username": "ayoub", "password": "ayoubayoub"}
+
+###
+
+POST http://10.11.4.4:8080/signup/
+Content-Type: application/json
+ 
+{"username": "eyub", "password": "123", "email": "eyub@gmail.com", "first_name":"Ayoub", "last_name":"Ech"}
+
+
+
+
+###
+
+GET http://10.11.4.4:8080/test_token
+Content-Type: application/json
+Authorization: Token 
+{}

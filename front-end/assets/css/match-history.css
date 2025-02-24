@@ -1,0 +1,120 @@
+
+
+.match-history-container {
+	padding: 0;
+	position: absolute;
+	width: 30%;
+	height: 850px;
+	left: calc(50% - 15%);
+	top: calc(50% - 400px);
+	/* top:100%; */
+	border: 3px solid #4a19fe;
+	background-color: #f7f6f6;
+	/* padding: 10px; */
+	/* border-radius: 20px; */
+	overflow: auto;
+}
+
+.match-history-container .header {
+	/* background-color: aqua; */
+	color: #2e2c30;
+}
+
+.match-history-container .header .txt {
+	margin: 30px;
+	display: inline-block;
+	font-size: 18px;
+}
+
+.match-history-container .header .close-btn{
+	float: right;
+	padding: 15px;
+	/* border: 1px solid #0a0a09; */
+}
+
+.match-history-container .header .close-btn i {
+	font-size: 23px;
+	
+}
+
+.match-history-container .header .close-btn:hover {
+	cursor: pointer;
+	background-color: red;
+}
+.match-history-container .header .close-btn:hover i {
+	color: whitesmoke;
+}
+
+.match-history-container .body .history {
+	margin-top: 20px;
+	/* background-color: brown; */
+	padding: 0 20px;
+	list-style-type: none;
+}
+
+.match-history-container .body .history .match {
+	background-color: #4a19fe;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	margin: 10px 0;
+	border-radius: 10px;
+	width: 100%;
+	height: 100%;
+	padding: 10px 20px;
+}
+
+.match-history-container .body .history .match.lose {
+	background-color: #fdb6a8;
+}
+
+.match-history-container .body .history .match.win {
+	background-color: #f0fbcd
+	
+}
+
+
+.match-history-container .body .history .match > span:nth-child(1),
+.match-history-container .body .history .match > span:nth-child(3) {
+	/* margin: 0 30px; */
+	/* color: aqua; */
+}
+
+.match-history-container .body .history .match .date {
+	/* background-color: aqua; */
+	flex: 20%;
+}
+
+.match-history-container .body .history .match .status {
+	flex: 20%;
+}
+
+.match-history-container .body .history .match .result {
+	flex: 60%;
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;	
+	padding: 0 20px;
+	/* background-color: #4e772f; */
+}
+
+.match-history-container .body .history .match .result > span.score {
+	margin: 0 20px;
+}
+
+.match-history-container .body .history .match .profile img {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+}
+
+
+.match-history-container .body .history .match.win span {
+	color : #4e772f;
+	font-size: 18px;
+}
+
+.match-history-container .body .history .match.lose span {
+	color : #ce5a86;
+	font-size: 18px;
+}

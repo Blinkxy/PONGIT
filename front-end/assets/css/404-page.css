@@ -1,0 +1,141 @@
+.notfound-container {
+    padding: 2rem;
+    text-align: center;
+	padding: 0;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+.notfound-container .error-content {
+    background: #e5e3e3;
+    padding: 3rem;
+    /* border-radius: 20px; */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    /* max-width: 500px; */
+	width: 100%; 
+	height: 100%;
+} 
+
+.notfound-container .error-number {
+    font-size: 8rem;
+    font-weight: bold;
+    color: #2d3436;
+    margin-bottom: 1rem;
+    line-height: 1;
+    text-shadow: 2px 2px 0 #dfe6e9;
+}
+
+.notfound-container .ghost {
+    margin: 2rem auto;
+    width: 100px;
+    height: 120px;
+    position: relative;
+    animation: float 3s ease-in-out infinite;
+}
+
+.notfound-container .ghost-body {
+    background: #2d3436;
+    border-radius: 50% 50% 0 0;
+    height: 80px;
+    position: relative;
+}
+
+.notfound-container .ghost-eyes {
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+    gap: 20px;
+}
+
+.notfound-container .eye {
+    width: 10px;
+    height: 10px;
+    background: white;
+    border-radius: 50%;
+    animation: blink 3s ease-in-out infinite;
+}
+
+.notfound-container .ghost-feet {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+}
+
+.notfound-container .foot {
+    background: #2d3436;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.notfound-container h1 {
+    color: #2d3436;
+    margin: 1rem 0;
+    font-size: 2rem;
+}
+
+.notfound-container p {
+    color: #636e72;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.notfound-container .home-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: #0984e3;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.notfound-container .home-button:hover {
+    background: #0051a8;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(9, 132, 227, 0.3);
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes blink {
+    0%, 100% {
+        transform: scale(1);
+    }
+    10% {
+        transform: scale(0.1);
+    }
+    15% {
+        transform: scale(1);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    .error-content {
+        padding: 2rem;
+    }
+    
+    .error-number {
+        font-size: 6rem;
+    }
+    
+    h1 {
+        font-size: 1.5rem;
+    }
+    
+    .ghost {
+        width: 80px;
+        height: 100px;
+    }
+}

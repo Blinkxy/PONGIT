@@ -1,0 +1,270 @@
+.settings-container {
+    padding: 0;
+    position: absolute;
+    width: 50%;
+    height: 850px;
+    left: calc(50% - 25%);
+    top: calc(50% - 425px);
+    border: none;
+    /* background-color: #0f172a; */
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+	/* opacity: .8; */
+	border: 3px solid #4a19fe;
+}
+
+.settings-container.active {
+    animation: active 2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes active {
+    from { top: 100%; opacity: 0; }
+    to { top: calc(50% - 400px); opacity: .9; }
+}
+
+/* .settings-container .header {
+    background: linear-gradient(135deg, #1e293b, #0f172a);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+} */
+
+.settings-container .header {
+	background: linear-gradient(to right, #ae528e, #ae8660);
+	color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 10%;
+	/* padding: 20px 0; */
+}
+
+.settings-container .header h2 {
+    letter-spacing: 3px;
+    font-weight: 500;
+    color: #e2e8f0;
+}
+
+.settings-container .body-msg {
+    height: 90%;
+    position: relative;
+    /* background-color: #1e293b;
+	background-color: #15023c; */
+	background-color: rgba(21, 2, 60, 0.8);
+
+    padding: 2rem;
+}
+
+.settings-container .body-msg .profile-container {
+    background: rgba(30, 41, 59, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    width: 85%;
+    height: 100%;
+    margin: 0 auto;
+    padding: 1.5rem;
+    backdrop-filter: blur(10px);
+	border: 2px solid #4a19fe;
+}
+
+.settings-container .body-msg .profile-container .profile-img {
+	width: 150px;
+	height: 150px;
+	margin: 0 auto;
+	border: 3px solid #6c63ff;
+	border-radius: 50%;
+	position: relative;
+	background-color: #444459;
+}
+
+.settings-container .body-msg .profile-container .profile-img img {
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+}
+
+.settings-container .body-msg .profile-container .profile-img .add-profile {
+	position: absolute;
+	top: 75%;
+	left: 78%;
+	border-radius: 50%;
+	background-color: #6c63ff;
+	width: 35px;
+	height: 35px;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.settings-container .body-msg .profile-container .profile-img .add-profile i {
+	color: #fff;
+	font-size: 18px;
+}
+
+.settings-container .body-msg .profile-container .profile-img .add-profile:hover {
+	background-color: #4a19fe;
+	cursor: pointer;
+	transform: scale(1.1);
+	transition: transform 0.3s, background-color 0.3s;
+}
+
+.settings-container .body-msg .profile-container .user,
+.settings-container .body-msg .profile-container .auth {
+    margin-top: 2.5rem;
+    padding: 1rem;
+    background: rgba(30, 41, 59, 0.3);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+	border: 1px solid #4a19fe;
+}
+
+.settings-container .body-msg .profile-container .user h3,
+.settings-container .body-msg .profile-container .auth h3 {
+    font-size: 1.5rem; /* Adjust the size as needed */
+    color: transparent;
+    background: linear-gradient(90deg, #6c63ff, #4a19fe);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; /* Makes text use gradient as color */
+    font-weight: 600;
+    /* margin-bottom: 0.5rem; */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 4px rgba(108, 99, 255, 0.5); /* Subtle shadow effect */
+    border-bottom: 2px solid rgba(108, 99, 255, 0.3); /* Optional underline effect */
+    padding-bottom: 0.5rem;
+	display: inline-block;
+}
+
+
+.settings-container .body-msg .profile-container .user .username,
+.settings-container .body-msg .profile-container .auth .tow-factor {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.settings-container .body-msg .profile-container .user .username .name,
+.settings-container .body-msg .profile-container .auth .tow-factor .name {
+    color: #38bdf8; /* Soft sky blue */
+    font-size: 1.2rem; /* Slightly larger for emphasis */
+    font-weight: 600; /* Makes it slightly bolder */
+    letter-spacing: 0.5px; /* Adds subtle spacing between letters */
+    text-shadow: 1px 1px 2px rgba(56, 189, 248, 0.4); /* Adds a soft glow effect */
+    padding: 0.5rem 0; /* Adds vertical padding for more space */
+    display: inline-block; /* Ensures proper spacing */
+    border-radius: 8px; /* Rounded look */
+	
+}
+
+
+.settings-container .body-msg .profile-container .user .username .name,
+.settings-container .body-msg .profile-container .auth .tow-factor .name {
+    color: #f4c430; /* Elegant golden yellow */
+    font-size: 1.3rem; /* Slightly larger for emphasis */
+    font-weight: bold; /* Makes it more prominent */
+    letter-spacing: 0.6px; /* Slightly more spacing for a luxurious feel */
+    text-shadow: 1px 1px 4px rgba(244, 196, 48, 0.5); /* Subtle golden glow effect */
+    padding: 0.6rem 0.8rem; /* Adds extra space around the text */
+	 /* Subtle gradient */
+    /* background: linear-gradient(90deg, rgba(244, 196, 48, 0.2), rgba(255, 215, 0, 0.1)); */
+    border-radius: 10px; /* Smooth rounded corners */
+	/* Soft golden border */
+    /* border: 1px solid rgba(255, 215, 0, 0.3);  */
+    display: inline-block;
+	/* Light blue background to make it pop */
+    /* background: rgba(56, 189, 248, 0.1);  */
+}
+
+
+.settings-container .body-msg .profile-container .user .username a,
+.settings-container .body-msg .profile-container .auth .tow-factor a {
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+/* Button Styles */
+.settings-container .body-msg .profile-container .user .username a {
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    color: white;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+}
+
+.settings-container .body-msg .profile-container .auth .tow-factor a {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
+}
+
+.settings-container .body-msg .profile-container .logout,
+.settings-container .body-msg .profile-container .delete-account {
+    width: 70%;
+    margin: 1.5rem auto;
+}
+
+.settings-container .body-msg .profile-container .logout a,
+.settings-container .body-msg .profile-container .delete-account a {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    border-radius: 10px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.settings-container .body-msg .profile-container .logout a {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    color: white;
+    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.2);
+}
+
+.settings-container .body-msg .profile-container .delete-account a {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    color: white;
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.2);
+}
+
+/* Hover effects */
+.settings-container .body-msg .profile-container .user .username a:hover,
+.settings-container .body-msg .profile-container .auth .tow-factor a:hover,
+.settings-container .body-msg .profile-container .logout a:hover,
+.settings-container .body-msg .profile-container .delete-account a:hover {
+    transform: translateY(-2px);
+    filter: brightness(110%);
+	cursor: pointer;
+}
+
+/* Active effects */
+.settings-container .body-msg .profile-container .user .username a:active,
+.settings-container .body-msg .profile-container .auth .tow-factor a:active,
+.settings-container .body-msg .profile-container .logout a:active,
+.settings-container .body-msg .profile-container .delete-account a:active {
+    transform: translateY(1px);
+}
+
+@media (max-width: 768px) {
+    .settings-container {
+        width: 90%;
+        left: 5%;
+    }
+    
+    .settings-container .body-msg .profile-container {
+        width: 95%;
+        padding: 1.5rem;
+    }
+}

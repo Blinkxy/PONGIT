@@ -1,0 +1,502 @@
+::-webkit-scrollbar {
+	width: 6px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+	/* background: #aa5656; */
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+	background: #888;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+	background: #555;
+  }
+
+:root{
+	--primary: #11998e;
+	--secondary: #38ef7d;
+	--white: #fff;
+	--gray: #9b9b9b;
+}
+
+.chat-container {
+	padding: 0;
+	position: absolute;
+	width: 50%;
+	height: 800px;
+	left: calc(50% - 25%);
+	top: calc(50% - 400px);
+	/* top:100%; */
+	/* background-color: #15023c; */
+	border: 3px solid #4a19fe;
+	border-radius: 20px;
+}
+
+.chat-container.active{
+	-webkit-animation: active 1s normal forwards; 
+	-moz-animation:    active 1s normal forwards;
+	-o-animation:      active 1s normal forwards;
+	/* height: 70px; */
+}
+
+/* .chat-container.leave{
+	-webkit-animation: leave 0.5s normal forwards;
+	-moz-animation:    leave 0.5s normal forwards;
+	-o-animation:      leave 0.5s normal forwards;
+} */
+
+
+/* The animation code */
+@keyframes active {
+	from  {top: 100%;}
+	to {top: calc(50% - 400px);}
+  }
+
+  /* @keyframes leave {
+	from  {left: 0;}
+	to {left: -300px;}
+  } */
+
+  /* .show {
+	display: block;
+  }
+  .hidden {
+	display: none;
+  } */
+
+.chat-container .friend-name {
+	background: linear-gradient(to right, #ae528e, #ae8660);
+	color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 10%;
+	border-top-left-radius: 12px;
+	border-top-right-radius: 12px;
+	/* padding: 20px 0; */
+}
+
+.chat-container .friend-name h2 {
+	letter-spacing: 5px;
+}
+
+.chat-container .body-msg {
+	/* background-color: #fff; */
+	height: 82%;
+	position: relative;
+	/* background-color: #15023c; */
+	background-color: rgba(21, 2, 60, 0.7); /* Semi-transparent background */
+	overflow: auto;
+	/* opacity: .8; */
+	/* border-radius: 20px; */
+}
+
+.chat-container .body-msg .first-msg {
+	color: #837998;
+	/* display: inline-block; */
+	position: absolute;
+	/* width: 460px; */
+	top: 50%;
+	left: calc(50% - 230px);
+	letter-spacing: 5px;
+	font-size: 20px;
+}
+
+.chat-container .body-msg .messages {
+	list-style-type: none;
+	width: 100%;
+	height: 100%;
+	/* background-color: #fff; */
+}
+
+.chat-container .body-msg .messages .message{
+	/* margin: 10px 0;	 */
+	width: 30%;
+	padding: 5px 10px;
+	/* background-color: #fff; */
+}
+
+.chat-container .body-msg .messages .message .name{
+	color: #fff;
+	margin-bottom: 5px;
+}
+
+.chat-container .body-msg .messages .message .content1{
+	/* background-color: #c1bdc9; */
+	display: inline-block;
+	border-radius: 7px;
+	padding: 5px 10px;
+}
+
+.chat-container .body-msg .messages .message .content1 .image {
+	width: 20%;
+	height: inherit;
+	float: left;
+	/* background-color: #38ef7d; */
+	text-align: center;
+	margin-right: 5px;
+}
+
+.chat-container .body-msg .messages .message .content1 .image img {
+	border-radius: 50%;
+	width: 100%;
+	height: 100%;
+}
+
+.chat-container .body-msg .messages .message .content1 .content2 {
+	/* font-weight:500;
+	font-size: 20px; */
+	width: calc(80% - 5px);
+	height: 100%;
+	float: left;
+	background-color: #fe199f;
+}
+
+.chat-container .body-msg .messages .message .content1 .content2 span.msg{
+	/* background-color: #11998e; */
+	display: inline-block;
+	margin-bottom: 5px;
+	/* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+	/* color:#90253b; */
+}
+
+.chat-container .body-msg .messages .message .content1 .content2 span.date{
+	display: flex;
+	justify-content:right;
+}
+
+
+/* input message */
+.chat-container .input-msg, .chat-container .input-msg2 {
+	background: linear-gradient(to right, #5033a0, #3f6797);
+	height: 8%;
+	position: relative;
+	background-color: #11998e;
+	border-radius: 20px;
+}
+
+.chat-container .input-msg2 {
+	padding: 15px 0 0;
+}
+
+.chat-container .input-msg2{
+	display: none;
+}
+
+.chat-container .input-msg span{
+	opacity: .3;
+	font-size: 20px;
+	padding: 20px;
+	/* background-color: #fff; */
+	position: absolute;
+	top: 0;
+	display: inline-block;
+	height: 100%;
+	width: 100%;
+	text-align: center;
+}
+
+.chat-container .input-msg span:hover{
+	cursor:not-allowed;
+}
+
+.chat-container .input-msg2 .form-field{
+	font-family: 'Poppins', sans-serif; 
+	width: 100%;
+	height: 100%;
+	border: 0;
+	/* border-bottom: 2px solid var(--gray); */
+	outline: 0;
+	font-size: 1.3rem;
+	color: var(--white);
+	padding: 7px 0;
+	background: transparent;
+	transition: border-color 0.2s;
+	margin-left: 20px; /* Add extra space to the left */
+  padding-left: 20px; /* Add padding inside the input */
+}
+
+.chat-container .input-msg2 .form-field::placeholder{
+	color: transparent;
+}
+
+.chat-container .input-msg2 .form-field:placeholder-shown ~ .form-label{
+	font-size: 1.3rem;
+    cursor: text;
+    top: 20px;
+}
+
+.chat-container .input-msg2 .form-label{
+	position: absolute;
+	top: 0;
+	display: block;
+	transition: 0.2s;
+	font-size: 1rem;
+	color: var(--gray);
+	left: 20px; /* Add extra space to the left */
+}
+
+.chat-container .input-msg2 .form-field:focus{
+	padding-bottom: 6px;
+	font-weight: 700;
+	border-width: 3px;
+	border-image: linear-gradient(to right, var(--primary), var(--secondary));
+	border-image-slice: 1;
+}
+
+.chat-container .input-msg2 .form-field:focus ~ .form-label {
+	position: absolute;
+	top: 0;
+	display: block;
+	transition: 0.2s;
+	font-size: 1rem;
+	/* color: var(--primary); */
+	font-weight:700;
+	/* background-color: #505252; */
+}
+
+
+
+
+/* Message container */
+.chat-container .body-msg .messages .message {
+    width: 100%;
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/* Sender name styling */
+.chat-container .body-msg .messages .message .name {
+    font-size: 0.9rem;
+    color: #837998;
+    margin-bottom: 4px;
+}
+
+/* Main message content wrapper */
+.chat-container .body-msg .messages .message .content1 {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    max-width: 60%;
+}
+
+/* Avatar container */
+.chat-container .body-msg .messages .message .content1 .image {
+    width: 35px;
+    height: 35px;
+    flex-shrink: 0;
+}
+
+.chat-container .body-msg .messages .message .content1 .image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #4a19fe;
+}
+
+/* Message text and timestamp container */
+.chat-container .body-msg .messages .message .content1 .content2 {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 12px 16px;
+    border-radius: 15px;
+    position: relative;
+
+
+
+
+
+}
+
+/* Message text */
+.chat-container .body-msg .messages .message .content1 .content2 .msg {
+    /* color: #fff; */
+    font-size: 0.95rem;
+    line-height: 1.4;
+    margin-bottom: 4px;
+    display: block;
+
+	
+	max-width: 100%; /* Prevent it from exceeding the container width */
+    word-wrap: break-word; /* Break long words */
+    overflow-wrap: break-word; /* Handle long words properly */
+    white-space: pre-wrap; /* Preserve spaces and line breaks */
+}
+
+/* Timestamp */
+.chat-container .body-msg .messages .message .content1 .content2 .date {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.5);
+    display: block;
+    text-align: right;
+    margin-top: 4px;
+}
+
+/* Sent message modifications */
+.chat-container .body-msg .messages .message.sent {
+    align-items: flex-end;
+}
+
+.chat-container .body-msg .messages .message.sent .content1 {
+    flex-direction: row-reverse;
+}
+
+.chat-container .body-msg .messages .message.sent .content1 .content2 {
+    background: #4a19fe;
+}
+
+.chat-container .body-msg .messages .message.sent .name {
+    align-self: flex-end;
+}
+
+/* Received message modifications */
+.chat-container .body-msg .messages .message.received {
+    align-items: flex-start;
+}
+
+.chat-container .body-msg .messages .message.received .content1 .content2 {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Message bubble tail */
+.chat-container .body-msg .messages .message .content1 .content2::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;	
+    border-style: solid;
+    top: 15px;
+}
+
+/* Left tail for received messages */
+.chat-container .body-msg .messages .message.received .content1 .content2::before {
+    left: -10px;
+    border-width: 8px 10px 8px 0;
+    border-color: transparent #e5e5ea transparent transparent;
+	/* border-color:  transparent transparent transparent #e5e5ea; */
+}
+
+/* Right tail for sent messages */
+.chat-container .body-msg .messages .message.sent .content1 .content2::before {
+    right: -8px;
+    border-width: 8px 0 8px 10px;
+    border-color: transparent transparent transparent #4a19fe;
+}
+
+
+
+/* Sent message modifications */
+.chat-container .body-msg .messages .message.sent .content1 .content2 {
+    background: #2979FF; /* Vibrant light blue */
+    /* White text for contrast */
+	/* color: #FFFFFF; */
+
+}
+
+/* Right tail for sent messages */
+.chat-container .body-msg .messages .message.sent .content1 .content2::before {
+    border-color: transparent transparent transparent #2979FF;
+}
+
+/* Received message modifications */
+.chat-container .body-msg .messages .message.received .content1 .content2 {
+    background: rgba(255, 255, 255, 0.2); /* Light gray with transparency */
+    /* White text for readability */
+	/* color: #FFFFFF; */
+}
+
+/* Left tail for received messages */
+.chat-container .body-msg .messages .message.received .content1 .content2::before {
+    /* border-color: transparent rgba(255, 255, 255, 0.2) transparent transparent; */
+}
+
+/* General message text */
+.chat-container .body-msg .messages .message .content1 .content2 .msg {
+    /* Slightly off-white for a softer appearance */
+	/* color: #F1F1F1; */
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+/* Timestamp styling */
+.chat-container .body-msg .messages .message .content1 .content2 .date {
+    color: rgba(255, 255, 255, 0.7); /* Slightly brighter for better visibility */
+}
+
+
+/* Apply a modern font to the entire chat container */
+.chat-container {
+    font-family: 'Poppins', 'Roboto', 'Open Sans', sans-serif; /* Modern, clean fonts */
+    font-size: 1rem; /* Base font size */
+     /* Default text color */
+	/* color: #F1F1F1; */
+
+}
+
+/* Styling for the sender/receiver name */
+.chat-container .body-msg .messages .message .name {
+    font-size: 1rem; /* Slightly larger for better readability */
+    font-weight: 600; /* Bold to stand out */
+   /* Bright white for contrast */
+	color: #FFFFFF; 
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Subtle shadow for readability */
+    margin-bottom: 6px; /* Add spacing for clarity */
+}
+
+/* Main message content */
+.chat-container .body-msg .messages .message .content1 .content2 .msg {
+    font-size: 1rem; /* Increase font size slightly */
+    line-height: 1.5; /* Improve line spacing */
+    font-weight: 400; /* Regular weight for body text */
+	/* Soft white */
+	/* color: #F1F1F1;  */
+}
+
+/* Timestamp styling */
+.chat-container .body-msg .messages .message .content1 .content2 .date {
+	/* Slightly smaller for subtlety */
+    font-size: 1rem; 
+    font-weight: 300; /* Light weight */
+    color: rgba(255, 255, 255, 0.7); /* Semi-transparent white */
+    text-align: right;
+}
+
+.chat-container .body-msg .messages .message.received .content1 .content2 .date {
+    color: rgba(9, 8, 8, 0.7); /* Semi-transparent white */
+}
+
+/* Sent message bubble */
+.chat-container .body-msg .messages .message.sent .content1 .content2 {
+    background: #2979FF; /* Vibrant light blue */
+    color: #FFFFFF;
+    font-size: 1rem; /* Consistent with message text */
+    font-weight: 400;
+    line-height: 1.5;
+    text-shadow: none; /* Keep clean */
+}
+
+/* Received message bubble */
+.chat-container .body-msg .messages .message.received .content1 .content2 {
+    /* Light gray with transparency */
+	/* background: rgba(255, 255, 255, 0.2);  */
+	
+    background-color: #e5e5ea;
+	color: #040303;
+    font-size: 1rem; /* Consistent with message text */
+    font-weight: 400;
+    line-height: 1.5;
+    text-shadow: none; /* Keep clean */
+}
+
+/* Ensure avatar container remains aligned */
+.chat-container .body-msg .messages .message .content1 .image img {
+    border: 2px solid #FFFFFF; /* Bright border for contrast */
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+}

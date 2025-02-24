@@ -1,0 +1,228 @@
+.tournament-map-container {
+	padding: 0;
+	position: absolute;
+	width: 50%;
+	height:950px;
+	left: calc(50% - 25%);
+	top: calc(50% - 425px);
+	/* top:100%; */
+	/* background-color: #15023c; */
+	/* border: 3px solid #4a19fe; */
+	background-color: #15023c;
+	padding: 10px;
+	border-radius: 20px;
+	opacity: .8;
+}
+
+.tournament-map-container img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	/* z-index: -1; */
+}
+
+.tournament-map-container .holder0 {
+	width: 100%;
+	height: 25%;
+	/* background-color: #1c03ab; */
+	background-image: url('../assets/imgs/1_VS_11.png'); /* Add your image path */
+	background-size: contain; /* Ensures the image fits the container */
+	background-position: center; /* Center the background image */
+	background-repeat: no-repeat; /* Prevent repetition of the image */
+	display: flex; /* Use Flexbox */
+	justify-content: center;
+	/* align-items: center; */
+}
+
+.tournament-map-container .holder {
+	width: 100%;
+	height: 75%;
+	/* background-color: #03ab62; */
+	/* z-index: 9999; */
+	padding: 10px;
+	background-image: url('../assets/imgs/map.png'); /* Add your image path */
+	background-size: cover; /* Ensures the image covers the container */
+	background-position: -20px -300px; /* Center the image */
+	background-repeat: no-repeat; /* Prevent repetition of the image */
+}
+
+.tournament-map-container .holder .players-top {
+	/* margin-top: ; */
+	position: relative;
+	top: 17px;
+	display: flex;
+	/* background-color: black;	 */
+	width: 100%;
+	height: 275px;
+}
+
+.tournament-map-container .holder .players-bottom {
+	position: relative;
+	top: 114px;
+	display: flex;
+	/* background-color: rgb(133, 28, 28); */
+	width: 100%;
+	height: 275px;
+}
+
+.tournament-map-container .holder .player {
+	width: 200px;
+	height: 100%;
+	border: 5px solid black;
+	border-radius: 8px;
+	overflow: hidden;
+}
+
+.tournament-map-container .holder .player img {
+	width: 100%;
+	height: 100%;
+	/* border-radius: 5px; */
+}
+
+/* styling the winner */
+
+.tournament-map-container .holder0 .winner {
+	width: 360px; /* Adjust as needed */
+	height: 100%; /* Makes the height match the parent */
+	display: flex; /* Use Flexbox */
+	justify-content: center; /* Centers the image horizontally */
+	align-items: center; /* Centers the image vertically */
+	/* background-color: rgb(22, 133, 28);  */
+	border-radius: 20px; /* Optional: Add rounded edges to `.winner` */
+	margin-top: -30px;
+}
+
+.tournament-map-container .winner img {
+	width: 180px;
+	height: 180px;
+	border-radius: 50%; /* Makes the image circular */
+	object-fit: cover; /* Ensures the image doesn't distort */
+	border: 3px solid #fff; /* Optional: Add a border around the image */
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Optional: Adds shadow for aesthetics */
+}
+
+
+.tournament-map-container .players-top .player-left1 {
+	position: absolute;
+	top: 0;
+	left: 377px;
+}
+
+.tournament-map-container .players-top  .player-left2 {
+	position: absolute;
+	top: 0;
+	left: 660px;
+}
+
+/* styling the four players */
+.tournament-map-container .players-bottom  .player-left1 {
+	position: absolute;
+	top: 0;
+	left: 45px;
+}
+
+.tournament-map-container .players-bottom .player-left2 {
+	position: absolute;
+	top: 0;
+	left: 318px;
+}
+
+.tournament-map-container .players-bottom .player-left3 {
+	position: absolute;
+	top: 0;
+	left: 733px;
+}
+
+.tournament-map-container .players-bottom  .player-left4 {
+	position: absolute;
+	top: 0;
+	left: 1000px;
+}
+
+.tournament-map-container .players-bottom .start-btn {
+	position: absolute;
+	top: 50%;
+	left: 570px;
+	width: 100px;
+	padding: 15px 30px;
+	text-align: center;
+	background: linear-gradient(to right, #e43a38, #e37548);
+	color: white; /* White text */
+	font-size: 20px;
+	font-family: Arial, sans-serif;
+	font-weight: bold;
+	border: none; /* Removes default border */
+	border-radius: 8px; /* Rounded corners */
+	cursor: pointer; /* Shows pointer on hover */
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Add a shadow for better aesthetics */
+	transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition for hover effects */
+}
+
+/* Hover effect */
+.tournament-map-container .players-bottom .start-btn:hover {
+	background-color: #45a049; /* Slightly darker green on hover */
+	transform: scale(1.1); /* Slightly enlarges the button */
+	box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4); /* Adds a deeper shadow */
+}
+
+/* Active (click) effect */
+.tournament-map-container .players-bottom .start-btn:active {
+	background-color: #3e8e41; /* Even darker green on click */
+	transform: scale(1); /* Returns to normal size */
+	box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2); /* Reduces shadow */
+}
+
+
+/* Add these styles to your tournament.css file */
+
+/* Base overlay styles for losing players */
+.player.player-lost {
+    position: relative;
+}
+
+.player.player-lost::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 0, 0, 0.3);
+    z-index: 1;
+}
+
+/* Diagonal red lines overlay */
+.player.player-lost::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        45deg,
+        rgba(255, 0, 0, 0.5),
+        rgba(255, 0, 0, 0.5) 10px,
+        transparent 10px,
+        transparent 20px
+    );
+    z-index: 2;
+}
+
+/* Dim the image of losing players */
+.player.player-lost img {
+    filter: grayscale(70%) brightness(0.7);
+}
+
+/* Animation for the losing effect */
+@keyframes lossFlash {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0.8; }
+}
+
+/* Apply the animation when a player loses */
+.player.player-lost::before,
+.player.player-lost::after {
+    animation: lossFlash 0.5s ease-out forwards;
+}

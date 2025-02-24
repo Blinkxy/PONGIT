@@ -1,0 +1,18 @@
+<div class="twofa-container">
+	<div class="popup">
+		<button class="close-btn">&times;</button>
+		<div class="popup-header">
+			<h2>Set Up Two-Factor Authentication</h2>
+			<p id="message-2fa">Please enter the code in your authenticator app</p>
+		</div>
+		<div class="qr-container">
+			<img src="../assets/imgs/qr_code.png" alt="QR Code" class="qr-code" id="qr-code-img">
+		</div>
+		<div class="input-group">
+			<label>Enter 6-digit verification code</label>
+			<input type="text" class="verification-input" maxlength="6" placeholder="000000" id="twofa-input">
+		</div>
+		<button class="verify-btn" id="twofa-valid">Verify and Enable 2FA</button>
+		<div class="error-message">Invalid verification code. Please try again.</div>
+	</div>
+</div>

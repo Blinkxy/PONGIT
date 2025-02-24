@@ -1,0 +1,105 @@
+.players-container {
+	padding: 0;
+	position: absolute;
+	width: 30%;
+	height: 850px;
+	left: calc(50% - 15%);
+	top: calc(50% - 400px);
+	/* top:100%; */
+	border: 3px solid #4a19fe;
+	background-color: #f7f6f6;
+	/* padding: 10px; */
+	/* border-radius: 20px; */
+	overflow: auto;
+}
+
+.players-container .header {
+	/* background-color: aqua; */
+	color: #2e2c30;
+}
+
+.players-container .header .txt {
+	margin: 30px;
+	display: inline-block;
+	font-size: 18px;
+}
+
+.players-container .header .close-btn{
+	float: right;
+	padding: 15px;
+	/* border: 1px solid #0a0a09; */
+}
+
+.players-container .header .close-btn i {
+	font-size: 23px;
+	
+}
+
+.players-container .header .close-btn:hover {
+	cursor: pointer;
+	background-color: red;
+}
+.players-container .header .close-btn:hover i {
+	color: whitesmoke;
+}
+
+/* leader board */
+.players-container .body .leader-board{
+	width: 100%;
+	margin-top: 10px;
+
+	height: calc(70% - 10px);
+	padding: 0 20px;
+	/* background-color: #15023c; */
+}
+
+.players-container .body .leader-board .classement {
+	list-style-type:none;
+	/* height: 100%; */
+	/* background-color: #2542a1; */
+	margin-top: 10px;
+}
+
+.players-container .body .leader-board .classement .player {
+	padding: 10px 20px;
+	margin: 5px 0;
+	border-radius: 10px;
+	background-color: #a0c8d2;
+	border: 3px solid black ;
+}
+
+.players-container .body .leader-board .classement .player.you {
+	background-color: #eeefdf;
+}
+
+.players-container .body .leader-board .classement span {
+	margin: 0 10px;
+	font-size: 21px;
+	color: #57789a;
+	font-weight:bolder;
+}
+
+.players-container .body .leader-board .classement .player.you span {
+	color: #fbc775;
+}
+
+.players-container .body .leader-board .classement .player.you span.you {
+	color: #93938f;
+}
+
+.players-container .body .leader-board .classement span.name {
+	margin-left: 50px;
+	margin-right: 0;
+}
+
+.players-container .body .leader-board .classement span.you {
+	margin: 0;
+	margin-left: 10px;
+}
+
+.txt{
+	color: #413f46;
+	/* margin: 10px 0; */
+	font-size: 20px;
+	font-weight: bold;
+}
